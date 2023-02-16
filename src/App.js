@@ -3,7 +3,6 @@ import Header from "./Components/Header";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { Container, Grid, Typography } from "@mui/material";
-// import { styled } from "@mui/material/styles";
 import { styled } from "@mui/system";
 import TextField from "./Components/FormsUI/Textfield";
 import Select from "./Components/FormsUI/Select/index";
@@ -12,18 +11,7 @@ import DateTimePicker from "./Components/FormsUI/DateTimePicker/index";
 import Checkbox from "./Components/FormsUI/Checkbox/index";
 import ButtonWrapper from "./Components/FormsUI/ButtonWrapper";
 
-// const useStyles = styled(({ theme }) => ({
-//   formWrapper: {
-//     marginTop: theme.spacing(4),
-//     marginBottom: theme.spacing(8),
-//   },
-// }));
-
 const MyComponent = styled("div")(({ theme }) => ({
-  // color: "darkslategray",
-  // backgroundColor: "aliceblue",
-  // padding: 8,
-  // borderRadius: 4,
   marginTop: theme.spacing(4),
   marginBottom: theme.spacing(8),
 }));
@@ -65,7 +53,6 @@ const FORM_VALIDATION = Yup.object().shape({
 });
 
 const App = () => {
-  // const classes = useStyles();
   return (
     <Grid container>
       <Grid item xs={12}>
@@ -73,7 +60,7 @@ const App = () => {
       </Grid>
       <Grid item xs={12}>
         <Container maxWidth="md">
-          <MyComponent /*className={classes.formWrapper}*/>
+          <MyComponent>
             <Formik
               initialValues={{
                 ...INITIAL_FORM_STATE,

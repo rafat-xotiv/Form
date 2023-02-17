@@ -66,8 +66,9 @@ const App = () => {
                 ...INITIAL_FORM_STATE,
               }}
               validationSchema={FORM_VALIDATION}
-              onSubmit={(values) => {
+              onSubmit={(values, action) => {
                 console.log(values);
+                action.resetForm();
               }}
             >
               <Form>
@@ -94,7 +95,7 @@ const App = () => {
                     <TextField name="addressLine1" label="Permanent Address" />
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField name="addressLine1" label="Current Address" />
+                    <TextField name="addressLine2" label="Current Address" />
                   </Grid>
                   <Grid item xs={6}>
                     <TextField name="city" label="City" />

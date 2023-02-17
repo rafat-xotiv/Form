@@ -12,7 +12,7 @@ const ButtonWrapper = ({ children, ...otherProps }) => {
     variant: "contained",
     color: "primary",
     fullWidth: true,
-    onChange: handleSubmit,
+    onClick: handleSubmit,
   };
   return <Button {...configButton}>{children}</Button>;
 };

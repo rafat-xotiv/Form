@@ -21,8 +21,8 @@ const INITIAL_FORM_STATE = {
   lastName: "",
   email: "",
   phone: "",
-  addressLine1: "",
-  addressLine2: "",
+  parmanentAddress: "",
+  currentAddress: "",
   city: "",
   state: "",
   country: "",
@@ -39,8 +39,8 @@ const FORM_VALIDATION = Yup.object().shape({
     .integer()
     .typeError("please enter a valid phone number")
     .required("Required"),
-  addressLine1: Yup.string().required("Required"),
-  addressLine2: Yup.string().required("Required"),
+  parmanentAddress: Yup.string().required("Required"),
+  currentAddress: Yup.string().required("Required"),
   city: Yup.string().required("Required"),
   state: Yup.string().required("Required"),
   country: Yup.string().required("Required"),
@@ -92,10 +92,13 @@ const App = () => {
                     <Typography>Address</Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField name="addressLine1" label="Permanent Address" />
+                    <TextField
+                      name="parmanentAddress"
+                      label="Permanent Address"
+                    />
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField name="addressLine2" label="Current Address" />
+                    <TextField name="currentAddress" label="Current Address" />
                   </Grid>
                   <Grid item xs={6}>
                     <TextField name="city" label="City" />
